@@ -28,6 +28,7 @@ function bubbleSortAscending(arr) {
                 arr[j+1] = temp;
             }
             count ++;
+        
         }
     }
     console.log(count);
