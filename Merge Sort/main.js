@@ -32,7 +32,27 @@ const originalArray = [
     return merge(left, right);
   }
 
-  function merge() {
-    
+  function merge(left, right) {
+    const result = [];
+    let leftIndex = 0;
+    let rightIndex = 0;
+
+    while(leftIndex < left.length && rightIndex < right.length) {
+        if(left[leftIndex] <= right[rightIndex]) {
+            result.push(left[leftIndex]);
+            leftIndex++;
+        } else {
+            result.push(right[rightIndex]);
+            rightIndex++;
+        }
+    }
+
+
+    return result.concat(left.slice(leftIndex).concat(right.slice(rightIndex)));
+  }
+
+  function sort() {
+    const sortedArray = mergeSort(originalArray.slice()); //Method 1
+    sortedArrayDisplay.textContent = sortedArray.join(', ');
   }
 
